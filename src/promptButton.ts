@@ -1,12 +1,19 @@
 import prompts from './assets/artist_way_clean_prompts.json'
+import { prepare, layout } from '@chenglou/pretext'
+
+
 
 export function setupPromptButton(element: HTMLButtonElement) {
   let usedPrompts: number[] = []
   const render = (prompt: (typeof prompts)[number] | null) => {
     element.innerHTML = `
-      <button id="prompt-button" type="button" class="prompt-button">random artist prompt</button>
-      <div id="prompt-header">${prompt?.chapter ?? 'No prompts left'}</div>
-      <div id="prompt-text">${prompt?.prompt_text ?? ''}</div>
+      <div id="prompt-container">
+        <div id="prompt-header">${prompt?.chapter ?? 'No prompts left'}</div>
+        <div id="prompt-text">${prompt?.prompt_text ?? ''}</div>
+      </div>
+      <div id="prompt-button-container">
+        <button id="prompt-button" type="button" class="prompt-button">random artist prompt</button>
+      </div>
     `
     element.querySelector('#prompt-button')!.addEventListener('click', onClick)
   }
