@@ -1,7 +1,4 @@
 import './style.css'
-import typescriptLogo from './assets/typescript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import { setupPromptButton } from './promptButton.ts'
 import { setupEInkToggle } from './e-ink-toggle.ts'
 import { setupAccordian } from './setupAccordian.ts'
