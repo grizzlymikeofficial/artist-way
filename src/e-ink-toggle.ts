@@ -1,13 +1,13 @@
 
 export function setupEInkToggle(element: HTMLElement) {
     // init html class
-    document.documentElement.classList.add("eink-max");
+    document.documentElement.html.classList.add("eink-max");
 
 
     element.innerHTML = `
       <div class="eink-toggle">
-        <button data-mode="eink-max" title="E-Ink MAX" class="active"><span class="icon">◉</span><span class="label">max</span></button>
-        <button data-mode="eink-reading" title="Lectura óptima" class=""><span class="icon">◎</span><span class="label">reading</span></button>
+        <button data-mode="eink-max" title="E-Ink MAX" class=""><span class="icon">◉</span><span class="label">max</span></button>
+        <button data-mode="eink-reading" title="Lectura óptima" class="active"><span class="icon">◎</span><span class="label">reading</span></button>
         <button data-mode="eink-night" title="Modo nocturno" class=""><span class="icon">◐</span><span class="label">night mode</span></button>
         <button data-mode="eink-normal" title="Sin filtro" class=""><span class="icon">○</span><span class="label">off</span></button>
       </div>`
