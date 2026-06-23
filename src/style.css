@@ -2,7 +2,6 @@
 
   /* App Master Widths and Heights */
   --app-width: 75vw; 
-  --content-width: 100%; /* hardcode for now-- 1124 + 2px border = app width */
   --prompt-min-height: calc(3*1.6em);
   --button-width: clamp(150px, 150px, .5vw);
   --button-height: clamp(60px, 80px, .2vw);
@@ -66,20 +65,28 @@ SITE HEADER
 .site-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;  /* h1 left, toggle right */
+  justify-content: space-between;
   gap: 16px;
-  width: var(--content-width);
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
   padding: 16px 18px 8px;
   box-sizing: border-box;
   text-align: left;
+  align-self: stretch;
 }
 
-
 .site-header .masked-text {
-  margin: 0;           /* remove default h1 margins */
+  margin: 0;
   line-height: 1.1;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+@media (max-width: 1024px) {
+  .site-header {
+    padding: 16px 20px 8px; /* match #center horizontal padding */
+  }
 }
 .eink-toggle {
   margin: 0;             /* remove margin-left */
@@ -390,7 +397,8 @@ p {
 }
 
 #center {
-  width: var(--content-width);
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -399,6 +407,8 @@ p {
   flex-grow: 1;
   justify-content: flex-start;   /* instead of place-content: center */
   align-items: center;  
+  box-sizing: border-box;  /* padding inside the 100% */
+
 
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
@@ -439,10 +449,12 @@ p {
 
 #promptButton {
   width: 100%;
+  max-width: 100%;
   margin: 24px auto 0;
   border: 1px solid var(--e-ink-accent-border);
   border-radius: 6px;
   color: var(--text-h);
+  box-sizing: border-box;  /* padding inside the 100% */
   /* background: var(--eink-paper); */
   text-align: left;
 }
@@ -702,5 +714,21 @@ div.circle:hover:before {
   border-radius: 6px;
   padding: 16px 18px;   /* same inset as #prompt-container */
   box-sizing: border-box;
+}
+
+@media (max-width: 1024px){
+  
+  #artistMessageContainer {
+    flex-direction: column;
+  }
+  
+  #artistMessage {
+    width: 100%;
+  }
+  
+  #formButton {
+    width: 100%
+  }
+
 }
 
