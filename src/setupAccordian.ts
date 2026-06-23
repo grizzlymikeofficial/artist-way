@@ -110,7 +110,7 @@ export function setupAccordian(element: HTMLDivElement) {
     id: 'weekly',
     header: 'Weekly Prompts',
     body: formatPrompts(chapter0),
-    open: true,
+    open: false,
   })
 
   createAccordionItem(element, {
