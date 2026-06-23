@@ -1,7 +1,7 @@
 
 export function setupEInkToggle(element: HTMLElement) {
     // init html class
-    document.documentElement.html.classList.add("eink-max");
+    document.documentElement.classList.add("eink-reading");
 
 
     element.innerHTML = `
