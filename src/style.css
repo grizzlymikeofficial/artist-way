@@ -9,7 +9,7 @@
   --e-ink-accent-border: rgba(100, 95, 85, 0.4);
 
   /*Font Variables*/
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif; /* Default Font */
+  --sans: 'Atkinson Hyperlegible', 'Verdana', sans-serif;
 
 
 
@@ -19,9 +19,9 @@
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
+  --accent: #8a857c;
   --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
+  --accent-border: rgba(100, 95, 85, 0.4);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -154,7 +154,7 @@ html.eink-reading {
 html.eink-reading body {
     background: #cac4ba !important;
     color: #1c1a18 !important;
-    font-family: var(--eink-font-serif) !important;
+    font-family: var(--sans) !important;
     /* font-size: 19px; */
     line-height: 1.8;
 }
@@ -183,7 +183,7 @@ html.eink-night {
 html.eink-night body {
     background: #a89888 !important;
     color: #1a1614 !important;
-    font-family: var(--eink-font-serif) !important;
+    font-family: var(--sans) !important;
     line-height: 1.8;
 }
 
@@ -218,6 +218,12 @@ html.eink-normal {
 html.eink-normal body {
     background: #f4f0ec !important;
     line-height: 1.8;
+    font-family: var(--sans) !important;
+    color: var(black) !important;
+    font-size: 18px;
+    line-height: 1.75;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E") !important;
+    -webkit-font-smoothing: antialiased;
 }
 
 html.eink-normal body::before,
@@ -330,7 +336,7 @@ TOGGLE SELECTOR - Transparente con borde suave
     }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: medium) {
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;

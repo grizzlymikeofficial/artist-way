@@ -13,7 +13,8 @@ export function setupFormButton(element: HTMLElement) {
   popup.hidden = true
   popup.innerHTML = `
     <div class="form-popup-box">
-      <textarea placeholder="Share a note..."></textarea>
+      <textarea placeholder="share a note..."></textarea>
+      <textarea placeholder="email (optional)"></textarea>
       <button type="button" id="form-popup-submit">submit</button>
       <button type="button" id="form-popup-close">close</button>
     </div>
@@ -22,10 +23,27 @@ export function setupFormButton(element: HTMLElement) {
 
   const open = () => { popup.hidden = false }
   const close = () => { popup.hidden = true }
+  const submitForm = () => {
+    const textareas = popup.querySelectorAll('textarea')
+    const noteField = textareas[0]
+    const emailField = textareas[1]
+    const note = noteField.value.trim()
+    const email = emailField.value.trim()
+
+    if (note === '') return
+
+    console.log(note)
+    console.log(email)
+
+    noteField.value = ''
+    emailField.value = ''
+    //send API to write entry to database
+  }
 
   element.querySelector('#form-button')!.addEventListener('click', open)
   popup.querySelector('#form-popup-close')!.addEventListener('click', close)
   popup.addEventListener('click', e => {
     if (e.target === popup) close()
   })
+  popup.querySelector('#form-popup-submit')!.addEventListener('click', submitForm)
 }
