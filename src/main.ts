@@ -20,7 +20,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div id="artistMessageContainer">
     <div id="artistMessage">
       <div id="prompt-header">Quote of the Day</div>
-        <p>${quoteOfTheDay}</p>
+        <p id="quote-of-the-day">${quoteOfTheDay}</p>
       </div>
     <div id="formButton"></div>
   </div>
