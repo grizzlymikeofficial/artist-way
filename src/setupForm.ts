@@ -65,7 +65,7 @@ export const getRandomNote = async (data?: Note[] ) => {
 export function setupFormButton(element: HTMLElement) {
   element.innerHTML = `
     <div class="circle" id="form-button">
-      <p>send some inspo</p>
+      <p>send a quote to get a quote</p>
     </div>
   `
 
